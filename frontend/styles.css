@@ -1,0 +1,85 @@
+:root {
+  --bg: #f3f8f5;
+  --panel: #ffffff;
+  --text: #122019;
+  --muted: #4e6356;
+  --accent: #117a45;
+  --accent-dark: #0c5c33;
+  --danger: #a11a1a;
+  --border: #d7e3db;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  font-family: "Segoe UI", Tahoma, sans-serif;
+  color: var(--text);
+  background: radial-gradient(circle at top right, #def3e6 0%, var(--bg) 45%, #edf4ef 100%);
+}
+
+.container {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 24px;
+}
+
+h1 { margin-bottom: 2px; }
+.subtitle { margin-top: 0; color: var(--muted); }
+
+.card {
+  background: var(--panel);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  padding: 16px;
+  margin-bottom: 16px;
+}
+
+.row { display: flex; justify-content: space-between; align-items: center; gap: 10px; }
+.tabs { display: flex; gap: 10px; margin-bottom: 10px; }
+.form, .form-inline { display: grid; gap: 10px; }
+.form-inline { grid-template-columns: 2fr 2fr 1fr auto; }
+
+input, select, button {
+  padding: 10px;
+  border-radius: 8px;
+  border: 1px solid var(--border);
+  font: inherit;
+}
+
+button {
+  background: var(--accent);
+  color: #fff;
+  border: none;
+  cursor: pointer;
+}
+
+button:hover { background: var(--accent-dark); }
+button.outline { background: #fff; color: var(--text); border: 1px solid var(--border); }
+button.active { background: var(--accent-dark); }
+
+.task-list { display: grid; gap: 8px; margin-top: 8px; }
+.task {
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 10px;
+}
+
+.task .actions { display: flex; gap: 8px; margin-top: 8px; }
+.task small { color: var(--muted); }
+
+.message {
+  min-height: 30px;
+  padding: 10px;
+  border-radius: 8px;
+}
+.message.error { background: #fce8e8; color: var(--danger); }
+.message.success { background: #e5f7ed; color: var(--accent-dark); }
+
+.hidden { display: none; }
+.hint { color: var(--muted); margin-bottom: 0; }
+pre { white-space: pre-wrap; max-height: 220px; overflow: auto; }
+
+@media (max-width: 760px) {
+  .form-inline { grid-template-columns: 1fr; }
+}

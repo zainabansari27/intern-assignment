@@ -1,0 +1,25 @@
+{
+  "users": [
+    {
+      "id": 1,
+      "name": "Test User",
+      "email": "test.user@example.com",
+      "password_hash": "$2a$12$81yrRdN3bMfPbFcQUC9SIe0/uNZ3ijoGQYmXxMM/3TPyqufOGqChS",
+      "role": "user",
+      "created_at": "2026-03-20T15:16:02.185Z"
+    },
+    {
+      "id": 2,
+      "name": "ali ali",
+      "email": "newuser123@example.com",
+      "password_hash": "$2a$12$OAtgCmqmAN46se98VnB.QuAGiH.HCc2EmeglarVNrHbMqzTUlJunu",
+      "role": "user",
+      "created_at": "2026-03-20T15:16:42.562Z"
+    }
+  ],
+  "tasks": [],
+  "meta": {
+    "nextUserId": 3,
+    "nextTaskId": 2
+  }
+}

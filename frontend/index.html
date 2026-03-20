@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Intern Assignment UI</title>
+  <link rel="stylesheet" href="./styles.css" />
+</head>
+<body>
+  <main class="container">
+    <h1>Assignment Demo Dashboard</h1>
+    <p class="subtitle">Auth + RBAC + Task CRUD</p>
+
+    <section class="card" id="auth-card">
+      <h2>Authentication</h2>
+      <div class="tabs">
+        <button id="tab-login" class="active">Login</button>
+        <button id="tab-register">Register</button>
+      </div>
+
+      <form id="login-form" class="form">
+        <input type="email" id="login-email" placeholder="Email" required />
+        <input type="password" id="login-password" placeholder="Password" required />
+        <button type="submit">Login</button>
+      </form>
+
+      <form id="register-form" class="form hidden">
+        <input type="text" id="reg-name" placeholder="Name" required />
+        <input type="email" id="reg-email" placeholder="Email" required />
+        <input type="password" id="reg-password" placeholder="Password (min 4 chars)" required />
+        <select id="reg-role">
+          <option value="user">User</option>
+          <option value="admin">Admin</option>
+        </select>
+        <button type="submit">Register</button>
+      </form>
+    </section>
+
+    <section class="card hidden" id="dashboard-card">
+      <div class="row">
+        <h2>Dashboard</h2>
+        <button id="logout-btn" class="outline">Logout</button>
+      </div>
+      <p id="user-info"></p>
+
+      <form id="task-form" class="form-inline">
+        <input type="text" id="task-title" placeholder="Task title" required />
+        <input type="text" id="task-description" placeholder="Description" />
+        <select id="task-status">
+          <option value="todo">todo</option>
+          <option value="in_progress">in_progress</option>
+          <option value="done">done</option>
+        </select>
+        <button type="submit">Create Task</button>
+      </form>
+
+      <h3>Your Tasks</h3>
+      <div id="task-list" class="task-list"></div>
+
+      <div class="admin-area hidden" id="admin-area">
+        <h3>Admin: Users</h3>
+        <button id="load-users-btn" class="outline">Load Users</button>
+        <pre id="users-output"></pre>
+      </div>
+    </section>
+
+    <section class="card">
+      <h2>API Base URL</h2>
+      <input type="text" id="api-base" value="http://localhost:5000/api/v1" />
+      <p class="hint">Change this if backend runs on another host/port.</p>
+    </section>
+
+    <div id="message" class="message"></div>
+  </main>
+
+  <script src="./app.js"></script>
+</body>
+</html>

@@ -1,0 +1,30 @@
+version: "3.9"
+services:
+  postgres:
+    image: postgres:16
+    container_name: intern-assignment-postgres
+    environment:
+      POSTGRES_DB: intern_assignment
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+    ports:
+      - "5432:5432"
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+
+  backend:
+    build: ./backend
+    container_name: intern-assignment-backend
+    depends_on:
+      - postgres
+    environment:
+      PORT: 5000
+      NODE_ENV: development
+      DATABASE_URL: postgres://postgres:postgres@postgres:5432/intern_assignment
+      JWT_SECRET: replace_me_with_a_long_random_string
+      JWT_EXPIRES_IN: 1d
+    ports:
+      - "5000:5000"
+
+volumes:
+  pgdata:
